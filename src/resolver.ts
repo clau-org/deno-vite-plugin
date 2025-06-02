@@ -179,7 +179,8 @@ export async function resolveViteSpecifier(
     }
   }
 
-  const resolved = cache.get(normalizeCacheKey(id)) ?? await resolveDeno(id, root);
+  const resolved = cache.get(normalizeCacheKey(id)) ??
+    await resolveDeno(id, root);
 
   // Deno cannot resolve this
   if (resolved === null) return;
